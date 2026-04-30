@@ -29,7 +29,7 @@ st.caption("Powered by Advanced Neural Inference")
 
 # --- 4. API SETUP ---
 # Replace with your actual Groq Key
-GROQ_API_KEY = "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"
+GROQ_API_KEY = "YOUR_GROQ_API_KEY_HERE"
 client = Groq(api_key=GROQ_API_KEY)
 
 # --- 5. CHAT LOGIC ---
@@ -73,9 +73,4 @@ if prompt := st.chat_input("Ask Sudoku..."):
             st.session_state.messages.append({"role": "assistant", "content": full_response})
 
         except Exception as e:
-            st.error(f"Connection Error: {e}"
-# See the space here?
-    st.session_state.messages.append({"role": "user", "content": prompt})
-    with st.chat_message("user"):
-        st.markdown(prompt)
-    st.session_state.messages.append({"role": "user", "content": prompt})
+            st.error(f"Connection Error: {e}")
