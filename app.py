@@ -74,3 +74,9 @@ if prompt := st.chat_input("Ask Sudoku..."):
 
         except Exception as e:
             st.error(f"Connection Error: {e}")
+            if prompt := st.chat_input("Ask Sudoku..."):
+    # This line tells the server to record what the user just typed
+    print(f"DEBUG - User Input: {prompt}")
+
+    st.session_state.messages.append({"role": "user", "content": prompt})
+    # ... rest of your code ...
